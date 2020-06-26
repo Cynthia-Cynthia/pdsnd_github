@@ -5,7 +5,7 @@
 Udacity Version Control Project
 
 ### Description
-Describe what your project is about and what it does
+This project is for me to practise versional control learnt from the Udacity course
 
 ### Files used
 Include the files used
