@@ -164,6 +164,22 @@ def user_stats(df):
         print("\nThis took %s seconds." % (time.time() - start_time))
         print('-'*40)
 
+def data_view(df):
+    """Displays the data rows of dataframe."""
+
+    message = input('\nWould you like to view the first 5 rows of data? Enter yes or no.\n')
+    i = 0
+    while message.lower() == 'yes':
+        if df.iloc[i:i+5].empty:
+            print('There are now more rows to display.')
+            break
+        else:
+            print(df.iloc[i:i+5])
+            i += 5
+            message = input('\nWould you like to view the next 5 rows of data? Enter yes or no.\n')
+
+    print('-'*40)    
+
 def main():
     while True:
         city, month, day = get_filters()
@@ -173,19 +189,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-
-        message = input('\nWould you like to view the first 5 rows of data? Enter yes or no.\n')
-        i = 0
-        while message.lower() == 'yes':
-            if df.iloc[i:i+5].empty:
-                print('There are now more rows to display.')
-                break
-            else:
-                print(df.iloc[i:i+5])
-                i += 5
-                message = input('\nWould you like to view the next 5 rows of data? Enter yes or no.\n')
-
-        print('-'*40)
+        data_view(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
