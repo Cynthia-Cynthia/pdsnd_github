@@ -16,21 +16,21 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    message = '\nSorry, we cannot recognise what you have entered. Please type {}'
+    invalid_message = '\nSorry, we cannot recognise what you have entered. Please type {}'
 
     city = input('\nPlease enter a city (Chicago, New York City or Washington) you are interested in: \n')
     while city.lower() not in ['chicago', 'new york city', 'washington']:
-        print(message.format('Chicago, New York City or Washington'))
+        print(invalid_message.format('Chicago, New York City or Washington'))
         city = input('Which city are you interested in? Chicago, New York City or Washington?\n')
 
     month = input('\nPlease enter a month (January, February, March, April, May, June or All) you are interested in: \n')
     while month.lower() not in ['january', 'february', 'march', 'april', 'may', 'june', 'all']:
-        print(message.format('January, February, March, April, May, June or All'))
+        print(invalid_message.format('January, February, March, April, May, June or All'))
         month = input('Which month are you interested in? January, February, March, April ,May, June or All?\n')
 
     day = input('\nPlease enter a day of week (Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday or All) you are interested in: \n')
     while day.lower() not in ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']:
-        print(message.format('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday or All'))
+        print(invalid_message.format('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday or All'))
         day = input('Which day of week are you interested in? Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday or All\n')
 
     print('-'*40)
